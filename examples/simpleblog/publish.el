@@ -29,7 +29,7 @@
 ;; Generate blog posts
 (weblorg-route
  :name "posts"
- :input-pattern "posts/*.org"
+ :input-pattern "src/posts/*.org"
  :template "post.html"
  :output "output/{{ slug }}.html"
  :url "/{{ slug }}.html")
@@ -37,7 +37,7 @@
 ;; Generate pages
 (weblorg-route
  :name "pages"
- :input-pattern "pages/*.org"
+ :input-pattern "src/pages/*.org"
  :template "page.html"
  :output "output/{{ slug }}/index.html"
  :url "/{{ slug }}")
