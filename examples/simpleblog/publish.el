@@ -31,7 +31,7 @@
  :name "posts"
  :input-pattern "src/posts/*.org"
  :template "post.html"
- :output "output/{{ slug }}.html"
+ :output "{{ slug }}.html"
  :url "/{{ slug }}.html")
 
 ;; Generate pages
@@ -39,7 +39,7 @@
  :name "pages"
  :input-pattern "src/pages/*.org"
  :template "page.html"
- :output "output/{{ slug }}/index.html"
+ :output "{{ slug }}/index.html"
  :url "/{{ slug }}")
 
 ;; Generate posts summary
@@ -48,7 +48,7 @@
  :input-pattern "posts/*.org"
  :input-aggregate #'weblorg-input-aggregate-all-desc
  :template "blog.html"
- :output "output/index.html"
+ :output "index.html"
  :url "/")
 
 (weblorg-route
@@ -56,11 +56,11 @@
  :input-pattern "posts/*.org"
  :input-aggregate #'weblorg-input-aggregate-all-desc
  :template "feed.xml"
- :output "output/feed.xml"
+ :output "feed.xml"
  :url "/feed.xml")
 
 (weblorg-copy-static
- :output "output/static/{{ file }}"
+ :output "static/{{ file }}"
  :url "/static/{{ file }}")
 
 (weblorg-site :theme nil)
