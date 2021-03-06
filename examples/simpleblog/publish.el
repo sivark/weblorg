@@ -25,13 +25,14 @@
 
 (require 'weblorg)
 
+
 ;; Generate blog posts
 (weblorg-route
  :name "posts"
  :input-pattern "posts/*.org"
  :template "post.html"
- :output "output/posts/{{ slug }}.html"
- :url "/posts/{{ slug }}.html")
+ :output "output/{{ slug }}.html"
+ :url "/{{ slug }}.html")
 
 ;; Generate pages
 (weblorg-route
@@ -61,6 +62,8 @@
 (weblorg-copy-static
  :output "output/static/{{ file }}"
  :url "/static/{{ file }}")
+
+(weblorg-site :theme nil)
 
 (weblorg-export)
 ;;; publish.el ends here
